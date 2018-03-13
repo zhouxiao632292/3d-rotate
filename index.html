@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .message{
+        width:940px;
+        height:300px;
+        margin: 0 auto;
+    }
+    ul,li.messageList{
+        display: inline-block
+        width:100%;
+        height:100%;
+    }
+    .messageList{
+        width:220px;
+        height:300px;
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        perspective:1000px;
+    }
+    .messageList:last-child{
+        margin-right: 0px;
+    }
+    .messageText,.messagePic{
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height: 300px;
+        background: rgba(0,0,0,.6);
+        transition: 0.5s;/*过渡  使之速度慢点*/
+    }
+    .messageText{
+        background: rgba(0,0,0,.6);
+        text-align: center;
+        line-height: 300px;
+        color:#fff;
+        transform: rotateY(90deg);
+    }
+    .messageList:hover  .messageText{
+        transform: rotateY(0deg);
+    }
+    .messageList:hover  .messagePic{
+        transform: rotateY(-90deg);
+    }
+</style>
+<body>
+  <div class="message">
+      <ul>
+          <li class="messageList">
+              <div class="messagePic">
+                  <img src="images/1.jpg" alt="图片1" width="220" heigth="300"/>
+              </div>
+              <div class="messageText">
+                  文字描述
+              </div>
+          </li>
+          <li class="messageList">
+              <div class="messagePic">
+                  <img src="images/1.jpg" alt="图片1" width="220" heigth="300"/>
+              </div>
+              <div class="messageText">
+              文字描述
+              </div>
+          </li>
+          <li class="messageList">
+              <div class="messagePic">
+                  <img src="images/1.jpg" alt="图片1" width="220" heigth="300"/>
+              </div>
+              <div class="messageText">
+              文字描述
+              </div>
+          </li>
+          <li class="messageList">
+              <div class="messagePic">
+                  <img src="images/1.jpg" alt="图片1" width="220" heigth="300"/>
+              </div>
+              <div class="messageText">
+              文字描述
+              </div>
+          </li>
+      </ul>
+  </div>
+</body>
+</html>
