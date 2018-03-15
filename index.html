@@ -55,11 +55,11 @@
     }
     h2{
         text-align: center;
-        padding: 15px;
+        padding: 25px;
     }
 
     /*小球碰撞*/
-    .box{
+    .box1{
         width:100%;
         height:300px;
         background: #000;
@@ -102,6 +102,66 @@
     /*.clearfix{*/
         /*clear: both;*/
     /*}*/
+   /*时光漏斗*/
+    .Box{
+        width:100%;
+        height:auto;
+        perspective: 1000px;
+    }
+    .box{
+        width: 1000px;
+        height:350px;
+        margin: 74px auto;
+        border:5px dotted blue;
+        border-radius: 30px;
+        animation: go 4s infinite linear ;
+    }
+    .box:hover{
+        animation-play-state:paused;
+    }
+    .box ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .box ul li{
+         width: 220px;
+         height: 300px;
+         position: relative;
+         transform-style: perserve-3d;
+        /*perspective:600px;*/
+     }
+    .box ul li.listLi:hover .imgPic{
+        transform: rotateY(-90deg);
+    }
+    .box ul li.listLi:hover .text{
+        transform: rotateY(0deg);
+    }
+    .imgPic,.text{
+        width:100%;
+        height:300px;
+        position: absolute;
+        top:0;
+        left:0;
+        transition: .5s;
+    }
+    .text{
+        background: orange;
+        text-align: center;
+        line-height: 300px;
+        transform: rotateY(90deg);
+    }
+    @keyframes go {
+        0%{
+            transform: rotateX(45deg);
+        }
+        50%{
+            transform: rotateX(-45deg);
+        }
+        100%{
+            transform: rotateX(45deg);
+         }
+    }
 
 </style>
 <body>
@@ -149,12 +209,49 @@
 <p>
 <h2>小球碰撞-弹性布局</h2>
 </p>
-<div class="box">
+<div class="box1">
     <div class="bubble">
         <div class="content"></div>
         <div class="content"></div>
         <div class="content"></div>
         <!--<div class="clearfix"></div>&lt;!&ndash;清除浮动&ndash;&gt;-->
+    </div>
+</div>
+<p>
+    <h2 style="margin-top: 40px">时光漏斗</h2>
+</p>
+<div class="Box">
+    <div class="box">
+        <ul>
+            <li class="listLi">
+                <div class="imgPic">
+                    <img src="images/1.jpg" alt="图片" width="220" height="300"/>
+                </div>
+                <div class="text">111</div>
+            </li>
+            <li class="listLi">
+                <div class="imgPic">
+                    <img src="images/2.jpg" alt="图片"  width="220" height="300"/>
+                </div>
+                <div class="text">222</div>
+
+            </li>
+            <li class="listLi">
+                <div class="imgPic">
+                    <img src="images/3.jpg" alt="图片"  width="220" height="300"/>
+                </div>
+
+                <div class="text">333</div>
+
+            </li>
+            <li class="listLi">
+                <div class="imgPic">
+                    <img src="images/4.jpg" alt="图片"  width="220" height="300"/>
+                </div>
+                <div class="text">444</div>
+
+            </li>
+        </ul>
     </div>
 </div>
 
