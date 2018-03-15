@@ -57,6 +57,52 @@
         text-align: center;
         padding: 15px;
     }
+
+    /*小球碰撞*/
+    .box{
+        width:100%;
+        height:300px;
+        background: #000;
+    }
+    .bubble{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 450px;
+        height:300px;
+        background: #000;
+        margin: 0 auto;
+        padding-left: 50px;
+        filter: blur(15px) contrast(30);
+    }
+    /*模仿一个伪元素  来清除浮动*/
+    .bubble:after{
+        display: block;  /*模仿一个伪元素  表示为块元素*/
+        content: "";  /*模仿一个伪元素  内容设置为空*/
+        clear:both;  /*模仿一个伪元素  来清除浮动*/
+    }
+    .content{
+        width:100px;
+        height:100px;
+        border-radius: 50%;
+        background: #fff;
+    }
+    /*可以做了影子  改变影子的位置  实现 碰撞的效果*/
+    .content:nth-child(2){
+        animation:changeFs 2s  infinite alternate ease-in-out;
+    }
+
+    @keyframes changeFs {
+        from{
+            box-shadow:350px 0 0 #fff;
+        }to{
+            box-shadow:-350px 0 0 #fff;
+                 }
+    }
+    /*.clearfix{*/
+        /*clear: both;*/
+    /*}*/
+
 </style>
 <body>
 <p>
@@ -98,5 +144,19 @@
           </li>
       </ul>
   </div>
+
+
+<p>
+<h2>小球碰撞-弹性布局</h2>
+</p>
+<div class="box">
+    <div class="bubble">
+        <div class="content"></div>
+        <div class="content"></div>
+        <div class="content"></div>
+        <!--<div class="clearfix"></div>&lt;!&ndash;清除浮动&ndash;&gt;-->
+    </div>
+</div>
+
 </body>
 </html>
